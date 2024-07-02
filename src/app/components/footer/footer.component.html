@@ -1,0 +1,62 @@
+<div class="row footer-header">
+    <div class="col-6">
+        <h1 class="header-text">We Are Happy To Answer You</h1>
+        <p class="header-text-2">There are many variations of passages</p>
+    </div>
+    <div class="col-6 button-container">
+        <button>Contact Us</button>
+    </div>
+</div>
+<div class="footer-section">
+    <div class="row footer-content">
+        <div class="col-3 logo"><img class="logoImg" src="assets/slmContainersLogo.jpeg" alt="slm-containers" /></div>
+        <div class="col-3 quick-lines">
+            <h3>Quick Links</h3>
+            <ul class="nav-links">
+                <li class="links" *ngFor="let menu of menuItems let i=index">
+                    {{ menu.name }}
+
+                </li>
+            </ul>
+        </div>
+        <div class="col-3 address">
+            <ul>
+                <h3>Address</h3>
+                <h5>FACTORY ADDRESS:</h5>
+                <li>Plot No. 1 & 2, KGL Nagar, Elandanur, Manali New Town, Manali, Chennai, Tamil Nadu</li>
+                <br />
+                <h5>OFFICE ADDRESS:</h5>
+                <li>Plot No. 1 & 2, KGL Nagar, Elandanur, Manali New Town, Manali, Chennai, Tamil Nadu</li>
+            </ul>
+        </div>
+        <div class="col-3 contacts">
+            <h3>Contacts</h3>
+            <ul class="nav-links">
+                <li>
+                    +91 9884364301
+                </li>
+                <li>
+                    +91 7299005568
+                </li>
+                <li>
+                    salesslmlogistics@gmail.com
+                </li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+
+    <div class=" row copyrights-section">
+        <div class="col-6 copyrights">
+            <span>
+                © 2024 SLM Containers. All rights reserved
+            </span>
+        </div>
+        <div class="col-6 socialMedia-section">
+            <div *ngFor="let socialMediaLink of socialMediaLinks" class="socialMedia-section">
+                <img class="socialMediaIcon" [src]="socialMediaLink.icon" alt="{{ socialMediaLink.name }}">
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+.header-container {
+    .navbar-nav {
+        gap: 80px;
+    }
+
+    .nav-item {
+        cursor: pointer;
+    }
+
+    .nav-link {
+        color: black;
+        transition: color 0.3s ease;
+        letter-spacing: 1px;
+    }
+
+    .nav-link:hover {
+        color: #3385ff;
+    }
+
+    .nav-link.first-item {
+        color: #3385ff;
+        letter-spacing: 2px;
+    }
+
+    .nav-link.active {
+        color: #3385ff;
+    }
+
+    .logo {
+        padding: 10px;
+    }
+
+    .logoImg {
+        height: 100%;
+        width: 100%;
+    }
+
+    .navbar {
+        background-color: white !important;
+    }
+
+    .navbar-container {
+        padding: 3%;
+    }
+
+    .socialMedia-container {
+
+        display: flex;
+        padding: 3%;
+        gap: 28px;
+    }
+
+    .socialMediaIcon {
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+
+    .socialMediaIcon:hover {
+        transform: scale(1.1);
+    }
+
+}

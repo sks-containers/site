@@ -1,0 +1,96 @@
+.main-container {
+    background: url('/assets/buildingBackground.png') no-repeat center center;
+    background-size: cover;
+}
+
+.our-products-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: auto;
+}
+
+.title {
+    font-size: 45px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.sub-paragraph {
+    font-size: 21px;
+    margin-bottom: 100px;
+    color: rgb(14 14 14);
+    letter-spacing: 0.5px;
+}
+
+.products-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-category {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.product-category ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.product-category li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+    line-height: 1.6;
+    font-size: 19px;
+    letter-spacing: 0.6px;
+}
+
+.product-category li:before {
+    content: '⚪';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #00aaff;
+    font-size: 12px;
+}
+
+.over-all {
+    display: flex;
+    gap: 10%;
+    padding: 3%;
+
+    .count {
+        font-size: 4rem;
+        font-weight: 800;
+    }
+
+    .content {
+        font-size: 2rem;
+        font-weight: 400;
+    }
+}
+/* Styles for the slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+  
+  /* CSS for the fade animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+

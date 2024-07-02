@@ -1,0 +1,75 @@
+<div class="main-container">
+    <div class="our-products-container">
+        <div class="title">Our Products</div>
+        <div class="sub-paragraph">
+            The company offers an extensive suite of products that cater to a wide variety of clientele.
+            Some of our best-selling portable cabins are:
+        </div>
+        <div class="products-list">
+            <div class="product-category">
+                <ul>
+                    <li>Conference Containers</li>
+                    <li>House Containers</li>
+                    <li>Office Containers</li>
+                    <li>Kitchen Containers</li>
+                    <li>Modular Office Containers</li>
+                    <li>Portable Bunk Houses</li>
+                    <li>Warehouses</li>
+                    <li>Portable Bunk Offices</li>
+                    <li>Portable Security Cabins</li>
+                    <li>Portable Washrooms</li>
+                </ul>
+            </div>
+            <div class="product-category">
+                <ul>
+
+                    <li>Restaurant Containers</li>
+                    <li>Site Office Containers</li>
+                    <li>Site Office Workstation Containers</li>
+                    <li>Plain Containers</li>
+                    <li>Used shipping Containers</li>
+                    <li>Portable office Containers</li>
+                    <li>Containers Manufacturing</li>
+                    <li>Brand New Containers</li>
+                    <li>Labor Accommodation Containers</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="Portfolio Gallery ">
+
+        <div class="slideshow-container">
+            <div *ngFor="let image of productImages" class="mySlides fade" [ngStyle]="{'display': image.visible ? 'block' : 'none'}">
+              <img [src]="image.src" [alt]="image.alt" style="width:100%">
+            </div>
+          </div>
+    </div>
+
+
+    <div class="over-all">
+        <div class="col-3">
+            <span class="count">3,400 +</span>
+            <br />
+            <span class="content">
+                Completed Projects
+            </span>
+        </div>
+        <div class="col-3">
+            <span class="count">1590 +</span>
+            <br />
+            <span class="content">
+                Happy Clients
+            </span>
+
+        </div>
+        <div class="col-3">
+            <span class="count">40 +</span>
+
+            <br />
+            <span class="content">
+                Industy we serve
+            </span>
+
+        </div>
+    </div>
+</div>

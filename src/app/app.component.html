@@ -1,0 +1,201 @@
+<div class="full-content">
+    <div id="home" class="header-container">
+        <div class="header-section">
+            <div class="logo">
+                <img class="logoImg" src="assets/sks-logo.jpg" alt="slm-containers" />
+            </div>
+            <div class="navbar-container">
+                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item" *ngFor="let menuItem of menuItems; let i = index">
+                                    <a class="nav-link" [class.active]="menuItem.isActive"
+                                        (click)="scrollToSection(menuItem.sectionId); setActive(i)">
+                                        {{ menuItem.name }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-gallery">
+        <div class="slideshow-container">
+            <div *ngFor="let image of productImages" class="mySlides "
+                [ngStyle]="{'display': image.visible ? 'block' : 'none'}">
+                <img class="changing-image" [src]="image.src" [alt]="image.alt">
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- About Section -->
+    <div id="about" class="slm-containers">
+        <h1 class="slm-content-header">SKS</h1>
+        <div class="slm-content">
+            <p class="about-us-content">
+                At '<b>SKS</b>' our journey embarked with a collective vision shared by a committed team of
+                professionals
+                who are deeply passionate about transforming the landscape of modular living. We specialize in crafting
+                premium-quality, environmentally conscious, and budget-friendly portable industrial containers and
+                cabins,
+                owing to our exceptional in-house engineering prowess and state-of-the-art infrastructure, all utilizing
+                the
+                finest materials available.
+                <br><br>
+                Driven by an unwavering dedication to customer delight and an incessant pursuit of excellence, we've
+                garnered the trust of a multitude of clients. What sets us apart from the competition is our ability to
+                customize our offerings to perfectly align with the unique requirements of each client.
+                <br><br>
+                In today's dynamic environment, modular living solutions like ours have attracted widespread attention
+                for
+                their affordability and versatility. All you need to kickstart your enterprise or accommodation needs is
+                the
+                space to install your modular unit!
+            </p>
+        </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <div class="gallery" id="gallery">
+        <div class="gallery-item" *ngFor="let image of visibleImages; let i = index" (click)="openModal(image.full)">
+            <img [src]="image.thumbnail" alt="Image" class="thumbnail" />
+        </div>
+    </div>
+
+    <app-modalpopup *ngIf="showModal" [imageUrl]="selectedImage" (close)="closeModal()"></app-modalpopup>
+
+    <!-- Products Section -->
+    <div id="products" class="main-container">
+        <div class="our-products-container">
+            <div class="title">Our Products</div>
+            <div class="sub-paragraph">
+                The company offers an extensive suite of products that cater to a wide variety of clientele. Some of our
+                best-selling portable cabins are:
+            </div>
+            <div class="products-list">
+                <div class="product-category">
+                    <ul>
+                        <li>Conference Containers</li>
+                        <li>House Containers</li>
+                        <li>Office Containers</li>
+                        <li>Kitchen Containers</li>
+                        <li>Modular Office Containers</li>
+                        <li>Portable Bunk Houses</li>
+                        <li>Warehouses</li>
+                        <li>Portable Bunk Offices</li>
+                        <li>Portable Security Cabins</li>
+                        <li>Portable Washrooms</li>
+                    </ul>
+                </div>
+                <div class="product-category">
+                    <ul>
+                        <li>Restaurant Containers</li>
+                        <li>Site Office Containers</li>
+                        <li>Site Office Workstation Containers</li>
+                        <li>Plain Containers</li>
+                        <li>Used Shipping Containers</li>
+                        <li>Portable Office Containers</li>
+                        <li>Containers Manufacturing</li>
+                        <li>Brand New Containers</li>
+                        <li>Labor Accommodation Containers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="over-all">
+            <div class="col-3">
+                <span class="count">1100 +</span>
+                <br />
+                <span class="content">Completed Projects</span>
+            </div>
+            <div class="col-3">
+                <span class="count">400 +</span>
+                <br />
+                <span class="content">Happy Clients</span>
+            </div>
+            <div class="col-3">
+                <span class="count">40 +</span>
+                <br />
+                <span class="content">Industry we serve</span>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="contact" class="row footer-header">
+        <div class="col-6">
+            <h1 class="header-text">We Are Happy To Answer Your Questions</h1>
+        </div>
+        <div class="col-6 button-container">
+            <button>Contact Us</button>
+        </div>
+    </div>
+
+
+    <!-- Google Maps Embed -->
+    <div class="full-width-map-container">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7770.292940069291!2d80.28970043109251!3d13.153159535373007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526fea9dbee123%3A0xf382bf04e000476d!2sKaladipet%2C%20Tiruvottiyur%2C%20Chennai%2C%20Tamil%20Nadu%20600019!5e0!3m2!1sen!2sin!4v1718880615901!5m2!1sen!2sin"
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+
+    <!-- Footer Section -->
+
+
+    <div class="footer-section">
+        <div class="row footer-content">
+            <div class="col-3 logo">
+                <img class="logoImg" src="assets/sks-logo.jpg" alt="slm-containers" />
+            </div>
+            <div class="col-3 quick-links">
+                <h3 class="footer-titles">Quick Links</h3>
+                <ul class="nav-links footer-menu">
+                    <li class="links" *ngFor="let menu of menuItems; let i = index">
+                        <a class="nav-link footer-menu-text" [class.active]="menu.isActive"
+                            (click)="scrollToSection(menu.sectionId); setActive(i)">
+                            {{ menu.name }}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-3 address">
+                <ul>
+                    <h3 class="footer-titles">Address</h3>
+                    <li class="footer-text">No.17/42, Thirupura Sundari Nagar, Kaladipet, Thiruvottiyur, Chennai, Tamil
+                        Nadu
+                    </li>
+                    <br />
+                </ul>
+            </div>
+            <div class="col-3 contacts">
+                <h3 class="footer-titles">Contacts</h3>
+                <ul class="nav-links contact-details">
+                    <li>+91 9884110719</li>
+                    <li>+91 9677295697</li>
+                    <li>s.chandradevi1992@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-6 copyrights">
+            <span>© 2024 SKS Containers. All rights reserved.</span>
+        </div>
+
+    </div>
+</div>

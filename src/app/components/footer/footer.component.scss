@@ -1,0 +1,82 @@
+.footer-header {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 80px 100px 50px 160px;
+    background: url('/assets/vector-footer.png') no-repeat center center;
+    background-size: cover;
+
+    .header-text {
+        color: #d7bb73;
+        width: 50%;
+        font-family: "Poppins", Sans-serif;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 1.2em;
+        letter-spacing: -1px;
+        margin-bottom: 2rem;
+    }
+
+    .header-text-2 {
+        color: aliceblue;
+        font-family: "Poppins", Sans-serif;
+        font-size: 22px;
+        line-height: 1.2em;
+        letter-spacing: 1px;
+
+
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button {
+        background: transparent;
+        color: #d7bb73;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 30px;
+        transition: background 0.3s;
+    }
+
+    button:hover {
+        background-color: #555;
+    }
+}
+
+.footer-section {
+    padding: 3%;
+
+    .logoImg {
+        height: 50%;
+        width: 50%;
+    }
+
+    .socialMedia-section {
+        display: flex;
+        gap: 28px;
+        justify-content: center;
+        padding-top: 3%;
+    }
+
+    .socialMediaIcon {
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+
+    .socialMediaIcon:hover {
+        transform: scale(1.1);
+    }
+
+    .copyrights {
+        padding: 5%;
+        font-size: 1.3rem;
+    }
+
+}
