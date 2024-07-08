@@ -36,7 +36,6 @@ export class AppComponent implements OnInit {
     { name: 'HOME', sectionId: 'home', isActive: true },
     { name: 'ABOUT', sectionId: 'about', isActive: false },
     { name: 'PRODUCTS', sectionId: 'products', isActive: false },
-    { name: 'SERVICES', sectionId: 'services', isActive: false },
     { name: 'GALLERY', sectionId: 'gallery', isActive: false },
     { name: 'CONTACT US', sectionId: 'contact', isActive: false }
   ];
@@ -137,7 +136,6 @@ export class AppComponent implements OnInit {
   closeModal(): void {
     this.showModal = false;
   }
-
 
 
   scrollToSection(sectionId: string): void {

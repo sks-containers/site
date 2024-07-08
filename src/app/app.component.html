@@ -28,21 +28,10 @@
         </div>
     </div>
 
-    <div class="portfolio-gallery">
-        <div class="slideshow-container">
-            <div *ngFor="let image of productImages" class="mySlides "
-                [ngStyle]="{'display': image.visible ? 'block' : 'none'}">
-                <img class="changing-image" [src]="image.src" [alt]="image.alt">
-            </div>
-        </div>
-    </div>
-
-
-
 
     <!-- About Section -->
     <div id="about" class="slm-containers">
-        <h1 class="slm-content-header">SKS</h1>
+        <!-- <h1 class="slm-content-header">SKS</h1> -->
         <div class="slm-content">
             <p class="about-us-content">
                 At '<b>SKS</b>' our journey embarked with a collective vision shared by a committed team of
@@ -67,14 +56,16 @@
         </div>
     </div>
 
-    <!-- Gallery Section -->
-    <div class="gallery" id="gallery">
-        <div class="gallery-item" *ngFor="let image of visibleImages; let i = index" (click)="openModal(image.full)">
-            <img [src]="image.thumbnail" alt="Image" class="thumbnail" />
+    <!-- portfolio-Gallery -->
+    <div class="portfolio-gallery">
+        <div class="slideshow-container">
+            <div *ngFor="let image of productImages" class="mySlides "
+                [ngStyle]="{'display': image.visible ? 'block' : 'none'}">
+                <img class="changing-image" [src]="image.src" [alt]="image.alt">
+            </div>
         </div>
     </div>
 
-    <app-modalpopup *ngIf="showModal" [imageUrl]="selectedImage" (close)="closeModal()"></app-modalpopup>
 
     <!-- Products Section -->
     <div id="products" class="main-container">
@@ -134,8 +125,18 @@
         </div>
     </div>
 
+    <!-- Gallery Section -->
+    <div class="gallery" id="gallery">
+        <div class="gallery-item" *ngFor="let image of visibleImages; let i = index">
+            <img [src]="image.thumbnail" alt="Image" class="thumbnail" />
+        </div>
+    </div>
+    <br>
+
+    <app-modalpopup *ngIf="showModal" [imageUrl]="selectedImage" (close)="closeModal()"></app-modalpopup>
 
 
+    <!-- Contact us -->
     <div id="contact" class="row footer-header">
         <div class="col-6">
             <h1 class="header-text">We Are Happy To Answer Your Questions</h1>
@@ -158,21 +159,10 @@
     <!-- Footer Section -->
 
 
-    <div class="footer-section">
+    <!-- <div class="footer-section">
         <div class="row footer-content">
             <div class="col-3 logo">
                 <img class="logoImg" src="assets/sks-logo.jpg" alt="slm-containers" />
-            </div>
-            <div class="col-3 quick-links">
-                <h3 class="footer-titles">Quick Links</h3>
-                <ul class="nav-links footer-menu">
-                    <li class="links" *ngFor="let menu of menuItems; let i = index">
-                        <a class="nav-link footer-menu-text" [class.active]="menu.isActive"
-                            (click)="scrollToSection(menu.sectionId); setActive(i)">
-                            {{ menu.name }}
-                        </a>
-                    </li>
-                </ul>
             </div>
             <div class="col-3 address">
                 <ul>
@@ -197,5 +187,27 @@
             <span>© 2024 SKS Containers. All rights reserved.</span>
         </div>
 
+    </div> -->
+
+
+
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/sks-logo.jpg" alt="SKS Logo">
+            </div>
+            <div class="footer-contact">
+                <p>Contact Numbers:</p>
+                <p>+91 9884110719</p>
+                <p>+91 9677295697</p>
+                <p>Email: <a href="mailto:s.chandradevi1992@gmail.com">s.chandradevi1992@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 SKS Containers. All rights reserved.</p>
+        </div>
     </div>
+
+
+
 </div>
