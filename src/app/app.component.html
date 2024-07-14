@@ -127,26 +127,27 @@
         </div>
     </div>
 
-<!-- Gallery Section -->
-<div class="gallery" id="gallery">
-    <div class="gallery-item" *ngFor="let image of galleryImages; let i = index" (click)="openImageViewer(i)">
-      <img [src]="image.thumbnail" alt="Image" class="thumbnail" />
+    <!-- Gallery Section -->
+    <div class="gallery" id="gallery">
+        <div class="gallery-item" *ngFor="let image of galleryImages; let i = index" (click)="openImageViewer(i)">
+            <img [src]="image.thumbnail" alt="Image" class="thumbnail" />
+        </div>
     </div>
-  </div>
-  
-  <!-- Image Viewer Modal -->
-  <div class="image-viewer" *ngIf="isImageViewerOpen">
-    <div class="image-viewer-content">
-      <span class="close-button" (click)="closeImageViewer()">&times;</span>
-      <img [src]="galleryImages[currentImageIndex]?.full" alt="Image" [style.transform]="'scale(' + zoomLevel + ')'">
-      <div class="controls">
-        <!-- <button (click)="zoomIn()">Zoom In</button>
-        <button (click)="zoomOut()">Zoom Out</button> -->
-      </div>
-    </div>
-  </div>
-  
 
+    <!-- Image Viewer Modal -->
+    <div class="image-viewer" *ngIf="isImageViewerOpen">
+        <div class="image-viewer-content">
+            <span class="close-button" (click)="closeImageViewer()">&times;</span>
+            <img [src]="galleryImages[currentImageIndex].full" alt="Image"
+                [style.transform]="'scale(' + zoomLevel + ')'">
+            <div class="controls">
+                <!-- <button (click)="zoomIn()">Zoom In</button>
+        <button (click)="zoomOut()">Zoom Out</button> -->
+            </div>
+        </div>
+    </div>
+
+    <br />
 
     <!-- Contact us -->
     <div id="contact" class="row footer-header">
