@@ -1,9 +1,6 @@
 <div class="full-content">
     <div id="home" class="header-container">
         <div class="header-section">
-            <div class="logo">
-                <img class="logoImg" src="assets/sks-logo.jpg" alt="slm-containers" />
-            </div>
             <div class="navbar-container">
                 <nav class="navbar navbar-expand-lg bg-body-tertiary">
                     <div class="container-fluid">
@@ -25,6 +22,11 @@
                     </div>
                 </nav>
             </div>
+
+            <div class="logo">
+                <img class="logoImg" src="assets/sks-logo.jpg" alt="slm-containers" />
+            </div>
+
         </div>
     </div>
 
@@ -125,15 +127,25 @@
         </div>
     </div>
 
-    <!-- Gallery Section -->
-    <div class="gallery" id="gallery">
-        <div class="gallery-item" *ngFor="let image of visibleImages; let i = index">
-            <img [src]="image.thumbnail" alt="Image" class="thumbnail" />
-        </div>
+<!-- Gallery Section -->
+<div class="gallery" id="gallery">
+    <div class="gallery-item" *ngFor="let image of galleryImages; let i = index" (click)="openImageViewer(i)">
+      <img [src]="image.thumbnail" alt="Image" class="thumbnail" />
     </div>
-    <br>
-
-    <app-modalpopup *ngIf="showModal" [imageUrl]="selectedImage" (close)="closeModal()"></app-modalpopup>
+  </div>
+  
+  <!-- Image Viewer Modal -->
+  <div class="image-viewer" *ngIf="isImageViewerOpen">
+    <div class="image-viewer-content">
+      <span class="close-button" (click)="closeImageViewer()">&times;</span>
+      <img [src]="galleryImages[currentImageIndex]?.full" alt="Image" [style.transform]="'scale(' + zoomLevel + ')'">
+      <div class="controls">
+        <!-- <button (click)="zoomIn()">Zoom In</button>
+        <button (click)="zoomOut()">Zoom Out</button> -->
+      </div>
+    </div>
+  </div>
+  
 
 
     <!-- Contact us -->

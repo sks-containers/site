@@ -5,6 +5,10 @@ interface MenuItem {
   sectionId: string;
   isActive: boolean;
 }
+interface GalleryImage {
+  thumbnail: string;
+  full: string;
+}
 
 interface SocialMediaLink {
   name: string;
@@ -29,9 +33,9 @@ interface GalleryImage {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  currentImageIndex: number = 0;
   showModal = false;
   selectedImage = '';
-  currentImageIndex = 0;
   menuItems: MenuItem[] = [
     { name: 'HOME', sectionId: 'home', isActive: true },
     { name: 'ABOUT', sectionId: 'about', isActive: false },
@@ -57,45 +61,47 @@ export class AppComponent implements OnInit {
   ];
 
   productImages: ProductImage[] = [
-    { src: 'assets/container_one.jpg', alt: 'Image 1', visible: true },
-    { src: 'assets/container_two.jpg', alt: 'Image 2', visible: false },
-    { src: 'assets/container_three.jpg', alt: 'Image 3', visible: false },
-    { src: 'assets/container_four.jpg', alt: 'Image 4', visible: false },
-    { src: 'assets/container_5.jpg', alt: 'Image 5', visible: false },
-    { src: 'assets/container_6.jpg', alt: 'Image 6', visible: false },
-    { src: 'assets/container_7.jpg', alt: 'Image 7', visible: false },
-    { src: 'assets/container_8.jpg', alt: 'Image 8', visible: false },
+    { src: 'assets/container_1.jpg', alt: 'Image 1', visible: true },
+    { src: 'assets/container_4.jpg', alt: 'Image 4', visible: false },
     { src: 'assets/container_9.jpg', alt: 'Image 9', visible: false },
-    { src: 'assets/container_10.jpg', alt: 'Image 10', visible: false },
     { src: 'assets/container_11.jpg', alt: 'Image 11', visible: false },
-    { src: 'assets/container_13.jpg', alt: 'Image 13', visible: false },
-    { src: 'assets/container_14.jpg', alt: 'Image 14', visible: false },
-    { src: 'assets/container_15.jpg', alt: 'Image 15', visible: false },
-    { src: 'assets/container_16.jpg', alt: 'Image 16', visible: false },
-    { src: 'assets/container_17.jpg', alt: 'Image 17', visible: false }
+    { src: 'assets/container_10.jpg', alt: 'Image 11', visible: false },
+    { src: 'assets/container_12.jpg', alt: 'Image 11', visible: false },
   ];
 
   galleryImages: GalleryImage[] = [
-    { thumbnail: 'assets/container_one.jpg', full: 'assets/container_one.jpg' },
-    { thumbnail: 'assets/container_two.jpg', full: 'assets/container_two.jpg' },
-    { thumbnail: 'assets/container_three.jpg', full: 'assets/container_three.jpg' },
-    { thumbnail: 'assets/container_four.jpg', full: 'assets/container_four.jpg' },
-    { thumbnail: 'assets/container_5.jpg', full: 'assets/container_5.jpg' },
-    { thumbnail: 'assets/container_6.jpg', full: 'assets/container_6.jpg' },
-    { thumbnail: 'assets/container_7.jpg', full: 'assets/container_7.jpg' },
-    { thumbnail: 'assets/container_8.jpg', full: 'assets/container_8.jpg' },
-    { thumbnail: 'assets/container_9.jpg', full: 'assets/container_9.jpg' },
-    { thumbnail: 'assets/container_10.jpg', full: 'assets/container_10.jpg' },
-    { thumbnail: 'assets/container_11.jpg', full: 'assets/container_11.jpg' },
     { thumbnail: 'assets/container_12.jpg', full: 'assets/container_12.jpg' },
-    { thumbnail: 'assets/container_13.jpg', full: 'assets/container_13.jpg' },
-    { thumbnail: 'assets/container_14.jpg', full: 'assets/container_14.jpg' },
-    { thumbnail: 'assets/container_15.jpg', full: 'assets/container_15.jpg' },
-    { thumbnail: 'assets/container_16.jpg', full: 'assets/container_16.jpg' },
-    { thumbnail: 'assets/container_17.jpg', full: 'assets/container_17.jpg' }
+    { thumbnail: 'assets/container_1.jpg', full: 'assets/container_1.jpg' },
+    { thumbnail: 'assets/container_4.jpg', full: 'assets/container_4.jpg' },
+    { thumbnail: 'assets/container_9.jpg', full: 'assets/container_9.jpg' },
+    { thumbnail: 'assets/container_4.jpg', full: 'assets/container_4.jpg' },
+    { thumbnail: 'assets/container_10.jpg', full: 'assets/container_10.jpg' },
+    { thumbnail: 'assets/container_12.jpg', full: 'assets/container_12.jpg' },
+    { thumbnail: 'assets/container_1.jpg', full: 'assets/container_1.jpg' },
   ];
 
-  visibleImages: GalleryImage[] = this.galleryImages.slice(0, 8);
+  isImageViewerOpen = false;
+  zoomLevel = 1;
+
+  openImageViewer(index: number): void {
+    this.currentImageIndex = index;
+    this.isImageViewerOpen = true;
+    this.zoomLevel = 1; // Reset zoom level when opening a new image
+  }
+
+  closeImageViewer(): void {
+    this.isImageViewerOpen = false;
+  }
+
+  // zoomIn(): void {
+  //   this.zoomLevel += 0.1;
+  // }
+
+  // zoomOut(): void {
+  //   if (this.zoomLevel > 0.1) {
+  //     this.zoomLevel -= 0.1;
+  //   }
+  // }
 
   carouselOptions = {
     loop: true,
